@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: clouddeployd
+      POSTGRES_USER: cd
+      POSTGRES_PASSWORD: secret
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+
+  registry:
+    image: registry:2
+    ports: ["5000:5000"]
+    volumes: [registry-data:/var/lib/registry]
+
+volumes:
+  pgdata:
+  registry-data:
