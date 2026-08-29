@@ -3,3 +3,8 @@
 *.test
 /bin/
 /dist/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
