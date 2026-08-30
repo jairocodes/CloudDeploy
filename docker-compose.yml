@@ -2,7 +2,7 @@ services:
   postgres:
     image: postgres:16-alpine
     environment:
-      POSTGRES_DB: clouddeployd
+      POSTGRES_DB: clouddeploy
       POSTGRES_USER: cd
       POSTGRES_PASSWORD: secret
     ports: ["5432:5432"]
