@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestStoreSmoke(t *testing.T){
+func TestStoreSmoke(t *testing.T) {
 	db, err := Connect("postgres://cd:secret@localhost:5432/clouddeploy?sslmode=disable")
 	if err != nil {
 		t.Fatalf("connect: %v", err)
@@ -20,7 +20,7 @@ func TestStoreSmoke(t *testing.T){
 		t.Fatalf("create project: %v", err)
 	}
 
-	deployID, err := s.CreateDeploy(ctx, projectID, "abc123")
+	deployID, err := s.CreateDeploy(ctx, projectID, "abc123", "localhost:5000/demo:abc123")
 	if err != nil {
 		t.Fatalf("create deploy: %v", err)
 	}
